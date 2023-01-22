@@ -24,12 +24,15 @@ const Home = () => {
     const fetchPosts = async () => {
       setLoading(true);
       try {
-        const response = await fetch("http://localhost:8080/api/v1/post", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+        const response = await fetch(
+          "https://img-dall-e.onrender.com/api/v1/post",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
 
         // console.log(response.ok);
         if (response.ok) {
@@ -62,7 +65,7 @@ const Home = () => {
         );
 
         setSearchResults(searchResults);
-      }, 500)
+      }, 1000)
     );
   };
 
