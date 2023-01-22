@@ -42,7 +42,7 @@ const CreatePost = () => {
     }
   };
   const handleSubmit = async (e) => {
-    e.prventDefault();
+    e.preventDefault();
     if (form.prompt && form.photo) {
       setLoading(true);
       try {
@@ -55,6 +55,7 @@ const CreatePost = () => {
         });
 
         await response.json();
+
         navigate("/");
       } catch (error) {
         alert(error);
